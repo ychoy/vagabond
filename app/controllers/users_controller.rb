@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_filter :authorize, only: [:edit, :update]
   before_action :set_user, only: [:edit, :show, :update]
   before_action :require_login, only: [:edit, :update]
@@ -23,22 +24,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    unless current_user == @user
-      redirect_to user_path(current_user)
-    end
+
   end
 
   def update
-    if current_user == @user
-      if @user.update_attributes(user_params)
+    if @user.update_attributes(user_params)
         flash[:notice] = "Successfully updated profile."
         redirect_to user_path(@user)
-      else
-        flash[:error] = @user.errors.full_messages.join(", ")
-        redirect_to edit_user_path(@user)
-      end
     else
-      redirect_to user_path(current_user)
+      flash[:error] = @user.errors.full_messages.join(", ")
+      redirect_to edit_user_path(@user)
     end
   end
 
