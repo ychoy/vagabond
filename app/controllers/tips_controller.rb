@@ -11,12 +11,12 @@ class TipsController < ApplicationController
   end
 
   def show
-
+    @author = User.find(@tip.user_id)
   end
 
   def create
-    @tip = Tip.create(tip_params)
 
+    @tip = current_user.tips.create(tip_params)
     redirect_to @tip
   end
 
