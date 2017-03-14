@@ -7,12 +7,14 @@ class TipsController < ApplicationController
   end
 
   def show
-
+    @author = User.find(@tip.user_id)
   end
 
   def create
     @tip = Tip.create(tip_params)
-    redirect_to tip_path(@tip)
+    current_user.tips << @tip
+
+    redirect_to @tip
   end
 
   private

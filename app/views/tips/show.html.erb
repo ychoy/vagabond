@@ -1,8 +1,6 @@
 <div>
   <h3><%= @tip.title %></h3>
-  <% @tip.users.each do |author| %>
-    <h4>by <%= author.first_name %> <%= author.last_name %></h4>
-  <% end %>
+  <h4>by <%= @author.first_name %> <%= @author.last_name %></h4>
   <p><%= @tip.body %></p>
   <hr>
 </div>
