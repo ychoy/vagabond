@@ -3,4 +3,9 @@
   <h4>Current City: <%= @user.current_city %></h4>
   <hr>
   <h5><%= (@user.created_at).strftime("Thank you for being a user since %m/%d/%Y") %></h5>
+  <h4>Tips!</h4>
+
+  <% @user.tips.each do |tip| %>
+    <%= link_to tip.title, tip_path(tip) %>
+  <% end %>
 </div>

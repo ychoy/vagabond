@@ -20,4 +20,12 @@ Rails.application.routes.draw do
 
   post "/sessions", to: "sessions#create"
 
+  ## POSTS ##
+
+  get "/tips/new", to: "tips#new", as: "new_tip"
+
+  get "/tips/:tip_id", to: "tips#show", as: "tip"
+
+  post "/tips", to: "tips#create"
+
 end
