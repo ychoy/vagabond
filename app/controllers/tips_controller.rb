@@ -11,9 +11,7 @@ class TipsController < ApplicationController
   end
 
   def create
-    @tip = Tip.create(tip_params)
-    current_user.tips << @tip
-
+    @tip = current_user.tips.create(tip_params)
     redirect_to @tip
   end
 
