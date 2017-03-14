@@ -1,0 +1,24 @@
+<h1> Update Profile </h1>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+
+    <%= form_for(@user) do |f| %>
+    	<div class='form-group'>
+      	<%= f.label :first_name %>
+      	<%= f.text_field :first_name, class: 'form-control', autofocus: true %>
+
+      	<%= f.label :last_name %>
+      	<%= f.text_field :last_name, class: 'form-control', autofocus: true %>
+
+      	<%= f.label :email %>
+      	<%= f.email_field :email, class: 'form-control', autofocus: true  %>
+
+        <%= f.label :profile_image %>
+        <%= f.text_field :profile_image, placeholder: "Profile Image", class: 'form-control', autofocus: true %>
+
+      </div>
+      <%= f.submit 'Save Profile', class: 'btn btn-block btn-primary' %>
+    <% end %>
+
+  </div>
+</div>
