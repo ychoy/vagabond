@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @tips = @user.tips
   end
 
   def new

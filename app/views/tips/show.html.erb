@@ -1,8 +1,18 @@
-<div>
-  <h3><%= @tip.title %></h3>
-  <% @tip.users.each do |author| %>
-    <h4>by <%= author.first_name %> <%= author.last_name %></h4>
-  <% end %>
-  <p><%= @tip.body %></p>
-  <hr>
+<div class="container">
++  <div class = "row">
++    <div class="col-md-4">
++    <div class="img-thumbnail">
++
++    </div>
++
++  </div>
++  <div class="col-md-8">
++    <h3><% @tip.title %></h3>
++    <% @tip.users.each do |author| %>
++      <h4>by <%= author.first_name %> <%= author.last_name %></h4>
++    <% end %>
++    <p class="small text-muted">Created on <%= (@tip.created_at).strftime("%m/%d/%Y") %></p>
++    <p><% @tip.body %></p>
++    <hr>
++  </div>
 </div>

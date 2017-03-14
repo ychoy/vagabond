@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-# vagabond
-A travel community for users to share city specific tips about their favorite locations around the world 
+# Le Vagabond
+A travel community for users to share city specific tips about their favorite locations around the world
 =======
 # README
 
@@ -26,4 +25,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
->>>>>>> user-routes
