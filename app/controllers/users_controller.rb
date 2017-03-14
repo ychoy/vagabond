@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
+  # index will likely be moved
   def index
-
   end
 
   def show
