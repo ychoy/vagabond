@@ -114,9 +114,7 @@ Fusce a leo eros. In in venenatis est, sed molestie augue. Aliquam justo enim, t
 
 In iaculis orci orci, non euismod elit aliquam eget. Curabitur congue feugiat malesuada. Morbi sit amet mattis mauris, vel varius augue. Etiam vitae nibh lacus. Quisque ex metus, sodales sit amet diam lacinia, vehicula gravida turpis. Aliquam imperdiet odio sed lectus fermentum, at viverra sapien tristique. Maecenas venenatis efficitur posuere.
 
-In vitae urna non ligula hendrerit interdum vitae a tortor. Morbi sit amet accumsan dolor. Maecenas a ex ac ex laoreet congue vitae pretium metus. Nunc at urna commodo, interdum quam eu, pretium diam. Nullam vitae ipsum sit amet turpis feugiat varius interdum nec libero. Sed quis sem velit. Fusce eu urna feugiat, convallis massa eget, consectetur magna. Vivamus efficitur tempus pharetra. Pellentesque viverra cursus metus, non consectetur magna posuere et. Nullam nec pharetra elit.
-
-Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum nec imperdiet magna. Curabitur porta placerat venenatis. Cras consequat at orci quis porttitor. Nulla maximus rhoncus lacus, eu feugiat ipsum tristique eu. Vestibulum mattis id mi in efficitur. Ut sit amet accumsan ligula. Pellentesque odio ipsum, scelerisque eget dignissim ut, pretium sit amet justo. Mauris augue urna, varius id dapibus vitae, luctus nec augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer ac feugiat odio.'
+In vitae urna non ligula hendrerit interdum vitae a tortor. Morbi sit amet accumsan dolor. Maecenas a ex ac ex laoreet congue vitae pretium metus. Nunc at urna commodo, interdum quam eu, pretium diam. Nullam vitae ipsum sit amet turpis feugiat varius interdum nec libero. Sed quis sem velit. Fusce eu urna feugiat, convallis massa eget, consectetur magna. Vivamus efficitur tempus pharetra. Pellentesque viverra cursus metus, non consectetur magna posuere et. Nullam nec pharetra elit.'
 
 Tip.create({
   title: 'Underwater caves',
