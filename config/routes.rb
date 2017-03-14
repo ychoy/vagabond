@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  root to: 'users#index'
-
   ## will probably need to change this route going forward
 
   get "/", to: "users#index", as: "root"
