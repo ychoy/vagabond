@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   post "/users", to: "users#create"
 
+  get "/users/:id/edit", to: "users#edit", as: "edit_user"
+
+  patch "/users/:id", to: "users#update", as: "update_user"
 
   ## SESSIONS ##
   get "/login", to: "sessions#new"
