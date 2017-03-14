@@ -1,8 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :user_tip, dependent: :destroy
-  has_many :tips, through: :user_tip
+  has_many :tips
 
   validates :first_name, presence: true, length: {maximum: 50}
   validates :last_name, presence: true, length: {maximum: 50}
