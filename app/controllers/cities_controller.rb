@@ -1,10 +1,13 @@
 class CitiesController < ApplicationController
 
+  before_action :set_city, only: [:show]
+
   def index
     @cities = City.all
   end
 
   def show
+    set_city_cookie
   end
 
   def new
@@ -22,7 +25,6 @@ class CitiesController < ApplicationController
   def update
   end
 
-
   private
 
   def city_params
@@ -32,6 +34,10 @@ class CitiesController < ApplicationController
   def set_city
     city_id = params[:id]
     @city = City.find_by_id(city_id)
+  end
+
+  def set_city_cookie
+    session[:city] = @city.id
   end
 
 end

@@ -3,7 +3,7 @@ class TipsController < ApplicationController
   before_action :set_tip, only: [:show, :edit, :update]
 
   def index
-    @tip = Tip.all 
+    @tip = Tip.all
   end
 
   def new
@@ -15,8 +15,10 @@ class TipsController < ApplicationController
   end
 
   def create
-
     @tip = current_user.tips.create(tip_params)
+    city_id = session[:city]
+    @city = City.find(city_id)
+    @city.tips << @tip
     redirect_to @tip
   end
 
