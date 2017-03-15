@@ -1,6 +1,6 @@
 class TipsController < ApplicationController
 
-  before_action :set_tip, only: [:show, :edit, :update]
+  before_action :set_tip, only: [:show, :edit, :update, :destroy]
 
   def index
     @tips = Tip.all
@@ -32,6 +32,8 @@ class TipsController < ApplicationController
   end
 
   def destroy
+    Tip.destroy(@tip)
+    redirect_to root_path
   end
 
   private
