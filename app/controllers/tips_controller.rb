@@ -1,7 +1,11 @@
 class TipsController < ApplicationController
 
   before_action :set_tip, only: [:show, :edit, :update]
-  
+
+  def index
+    @tip = Tip.all 
+  end
+
   def new
     @tip = Tip.new
   end
