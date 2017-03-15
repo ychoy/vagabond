@@ -1,6 +1,13 @@
 <h3> <%= @city.name %></h3>
 <img class='banner-img' src=<%= @city.photo%>>
-<%= button_to "Add New Tip", new_tip_path, method: "get"%>
-<% @city.tips.each do |tip|%>
-  <%= link_to tip.title, tip_path(tip) %> <br>
-<% end %>
+<br>
+<br>
+<div class="container">
+  <%= button_to "Add New Tip", new_tip_path, method: "get"%>
+  <% @city.tips.order(created_at: :desc).each do |tip|%>
+    <strong><%= link_to tip.title, tip_path(tip) %></strong>
+    by <%= link_to "#{tip.user.first_name} #{tip.user.last_name}", user_path(tip.user) %>
+    </p>
+    <br>
+  <% end %>
+</div>
