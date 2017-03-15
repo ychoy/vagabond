@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   post "/sessions", to: "sessions#create"
 
-  ## POSTS ##
+  ## TIPS ##
 
   get "/tips", to: "tips#index", as: "tips"
 
@@ -31,6 +31,10 @@ Rails.application.routes.draw do
   get "/tips/:id", to: "tips#show", as: "tip"
 
   post "/tips", to: "tips#create"
+
+  get "/tips/:id/edit", to: "tips#edit", as: "edit_tip"
+
+  patch "/tips/:id", to: "tips#update", as: "update_tip"
 
   get "/tips/:id/delete", to: "tips#destroy", as: "delete_tip"
 

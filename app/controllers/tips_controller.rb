@@ -3,7 +3,8 @@ class TipsController < ApplicationController
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tip = Tip.all
+    @tips = Tip.all
+
   end
 
   def new
@@ -19,6 +20,15 @@ class TipsController < ApplicationController
     city_id = session[:city]
     @city = City.find(city_id)
     @city.tips << @tip
+    redirect_to @tip
+  end
+
+  def edit
+  end
+
+  def update
+    @tip.update_attributes(tip_params)
+    flash[:notice] = "Tip successfully updated"
     redirect_to @tip
   end
 
