@@ -4,8 +4,8 @@ class Tip < ApplicationRecord
   belongs_to :city, optional: true
 
 
-  validates :title, presence: true, length: { maximum:50 }
-  validates :body, presence: true, length: { maximum: 2500 }
+  validates :title, presence: true, length: { maximum: 200 }, allow_nil: false
+  validates :body, presence: true, length: { maximum: 3000 }, allow_nil: false
 
   def author?(user)
     user.tips.include?(self)
