@@ -31,7 +31,7 @@ class TipsController < ApplicationController
 
   def update
     @tip.update_attributes(tip_params)
-    flash[:notice] = "Tip successfully updated"
+    flash[:notice] = tip_rename + " successfully updated"
     redirect_to @tip
   end
 
