@@ -33,6 +33,9 @@ Rails.application.routes.draw do
 
 
   ## CITIES ##
+
+  get "/cities", to: "cities#index", as: "cities"
+
   get "/cities/new", to: "cities#new", as: "new_city"
 
   get  "/cities/:id", to: "cities#show", as: "city"
