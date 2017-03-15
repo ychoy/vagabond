@@ -1,43 +1,43 @@
 <div class="container">
-  <div class = "row">
-    <% if current_user && current_user == @user %>
-      <div class="col-md-4">
-        <div class="img-thumbnail">
-          <%= image_tag @user.profile_image %>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <h3><strong>Welcome <%= @user.first_name.capitalize %>!</strong></h3>
-        <hr>
-        <p><strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %> </p>
-        <p><strong>Email:</strong> <%= @user.email %></p>
-        <p><strong>Current City:</strong> <%= @user.current_city %></p>
-    	  <p class="small text-muted"><%= (@user.created_at).strftime("Thank you for being a user since %m/%d/%Y") %></p>
-      </div>
-    <% else %>
-      <div class="col-md-4">
-        <div class="img-thumbnail">
-          <%= image_tag @user.profile_image %>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <h3><strong><%= @user.first_name.capitalize %>'s Profile</strong></h3>
-        <hr>
-        <p><strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %> </p>
-        <p><strong>Email:</strong> <%= @user.email %></p>
-        <p><strong>Current City:</strong> <%= @user.current_city %></p>
-    	  <p class="small text-muted">Joined on <%= (@user.created_at).strftime("%m/%d/%Y") %></p>
-      </div>
-    <% end %>
+ <div class = "row">
+   <% if current_user && current_user == @user %>
+     <div class="col-md-4">
+       <div class="img-thumbnail">
+         <%= image_tag @user.profile_image %>
+       </div>
+     </div>
+     <div class="col-md-8">
+       <h3><strong>Welcome <%= @user.first_name.capitalize %>!</strong></h3>
+       <hr>
+       <p><strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %> </p>
+       <p><strong>Email:</strong> <%= @user.email %></p>
+       <p><strong>Current City:</strong> <%= @user.current_city %></p>
+         <p class="small text-muted"><%= (@user.created_at).strftime("Thank you for being a user since %m/%d/%Y") %></p>
+     </div>
+   <% else %>
+     <div class="col-md-4">
+       <div class="img-thumbnail">
+         <%= image_tag @user.profile_image %>
+       </div>
+     </div>
+     <div class="col-md-8">
+       <h3><strong><%= @user.first_name.capitalize %>'s Profile</strong></h3>
+       <hr>
+       <p><strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %> </p>
+       <p><strong>Email:</strong> <%= @user.email %></p>
+       <p><strong>Current City:</strong> <%= @user.current_city %></p>
+         <p class="small text-muted">Joined on <%= (@user.created_at).strftime("%m/%d/%Y") %></p>
+     </div>
+   <% end %>
 
-  </div>
+ </div>
 
 
-  <hr>
-  <br>
-  <h4>Tips!</h4>
+ <hr>
+ <br>
+ <h4>Tips!</h4>
 
-  <% @user.tips.each do |tip| %>
-    <%= link_to tip.title, tip_path(tip) %>
-  <% end %>
+ <% @user.tips.each do |tip| %>
+   <%= link_to tip.title, tip_path(tip) %>
+ <% end %>
 </div>
