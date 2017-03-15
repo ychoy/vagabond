@@ -24,4 +24,8 @@ module SessionsHelper
     end
   end
 
+  def authorize_owner
+    redirect_to root_path unless current_user == @owner
+  end
+
 end
