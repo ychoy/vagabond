@@ -12,10 +12,7 @@ class TipsController < ApplicationController
   end
 
   def show
-    @tip
-
     @author = User.find(@tip.user_id)
-
   end
 
   def create
@@ -27,14 +24,10 @@ class TipsController < ApplicationController
   end
 
   def edit
-    tip_id = params[:id]
-    @tip = Tip.find_by_id(tip_id)
-    render :edit
   end
 
   def update
     @tip.update_attributes(tip_params)
-
     flash[:notice] = "Tip successfully updated"
     redirect_to @tip
   end

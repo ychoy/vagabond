@@ -5,11 +5,9 @@
     <%= form_for @tip do |f| %>
       <div class='form-group'>
         <%= f.label :title %>
-        <%= f.text_field :title, placeholder: "#{@tip.title}", class: 'form-control', autofocus: true %>
-
+        <%= f.text_field :title, class: 'form-control', autofocus: true %>
         <%= f.label :body %>
-        <%= f.text_field :body, placeholder: "#{@tip.body}", class: 'form-control', autofocus: true %>
-
+        <%= f.text_field :body, class: 'form-control', autofocus: true %>
       </div>
       <%= f.submit 'Confirm Edit', class: 'btn btn-block btn-info' %>
     <% end %>
