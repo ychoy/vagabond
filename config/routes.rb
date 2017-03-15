@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   ## will probably need to change this route going forward
 
-  get "/", to: "users#index", as: "root"
+  get "/", to: "cities#index", as: "root"
+ 
 
   get "/users/new", to: "users#new", as: "new_user"
 
