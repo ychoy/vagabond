@@ -19,6 +19,32 @@ class TipsController < ApplicationController
     redirect_to @tip
   end
 
+  def edit
+    tip_id = params[:id]
+    @tip = Tip.find_by_id(tip_id)
+    render :edit
+  end
+
+  def update
+    tip_id = params[:id]
+    @tip = Tip.find_by_id(tip_id)
+
+
+
+    @tip.update_attributes(tip_params)
+
+
+    # if @tip.update_attributes(tip_params)
+    #   flash[:notice] = "edit successful"
+    # else
+    #   flash[:error] = "ERROR edit unsuccessful"
+    # end
+    redirect_to tip_path(@tip)
+  end
+
+  def destroy
+  end
+
   private
 
   def tip_params
