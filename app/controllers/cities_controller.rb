@@ -37,7 +37,7 @@ class CitiesController < ApplicationController
   end
 
   def set_city_cookie
-    session[:city] = @city
+    session[:city] = @city.id
   end
 
 end
