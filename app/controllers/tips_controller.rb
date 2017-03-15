@@ -14,7 +14,7 @@ class TipsController < ApplicationController
   end
 
   def show
-    @author = User.find(@tip.user_id)
+    @author = @tip.user
   end
 
   def create
