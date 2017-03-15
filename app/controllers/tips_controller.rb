@@ -34,8 +34,4 @@ class TipsController < ApplicationController
     @tip = Tip.find_by_id(tip_id)
   end
 
-  def tip_form_redirect
-    redirect_to new_tip_path
-  end
-
 end
