@@ -1,21 +1,18 @@
 <div class="container">
   <%= image_tag("lvg_yanyinchoy.png", width: "100%", class:"img-fluid", alt:"homepage photo") %>
 </div>
-
 <br>
-
-
 <% @cities.each do |city| %>
   <div class="card group">
-
-      <div class="col-md-4">
-        <div class="card">
-          <%= image_tag city.photo, class: "img-thumbnail", alt:"Card image cap" %>
-          <div class="card-block">
-            <h4 class="card-title"> <%= city.name.split.each{|word| word.capitalize}.join(" ") %></h4>
-          </div>
+    <div class="col-md-4">
+      <div class="card">
+        <%= image_tag city.photo, class: "img-thumbnail", alt:"Card image cap" %>
+        <div class="card-block">
+          <h4 class="card-title"> <%= link_to city.name.split.each{|word| word.capitalize}.join(" "), city_path(city) %></h4>
         </div>
       </div>
-
+    </div>
   </div>
 <% end %>
+
+ 
