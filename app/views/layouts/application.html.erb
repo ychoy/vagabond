@@ -37,7 +37,7 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-    
+
     <% flash.each do |name, msg| %>
       <div class="alert <%= name == 'error' ? 'alert-danger' : 'alert-info' %>">
         <div class="container">
@@ -46,13 +46,6 @@
       </div>
     <% end %>
 
-    <div class="container site-content">
-      <div class="row">
-
-          <%= yield %>
-
-      </div>
-    </div>
-
+    <%= yield %>
   </body>
 </html>
