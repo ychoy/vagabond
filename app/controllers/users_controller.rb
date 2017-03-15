@@ -2,8 +2,7 @@ class UsersController < ApplicationController
 
   before_action :require_login, only: [:edit, :update]
   before_action :set_user, only: [:edit, :show, :update]
-  before_action :set_owner, only: [:edit, :update]
-  before_action :authorize_owner, only: [:edit, :update]
+  before_action :authorize_user, only: [:edit, :update]
 
   # index will likely be moved
   def index
@@ -47,10 +46,6 @@ class UsersController < ApplicationController
   def set_user
     user_id = params[:id]
     @user = User.find_by_id(user_id)
-  end
-
-  def set_owner
-    @owner = @user
   end
 
 end
