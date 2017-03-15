@@ -1,6 +1,9 @@
 class TipsController < ApplicationController
 
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
+  before_action :set_owner, only: [:edit, :update, :destroy]
+  before_action :authorize_owner, only: [:edit, :update, :destroy]
 
   def index
     @tips = Tip.all
@@ -32,7 +35,7 @@ class TipsController < ApplicationController
   end
 
   def destroy
-    Tip.destroy(@tip)
+    @tip.destroy
     redirect_to root_path
   end
 
@@ -46,6 +49,10 @@ class TipsController < ApplicationController
   def set_tip
     tip_id = params[:id]
     @tip = Tip.find_by_id(tip_id)
+  end
+
+  def set_owner
+    @owner = @tip.user
   end
 
 end

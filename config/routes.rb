@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   patch "/tips/:id", to: "tips#update", as: "update_tip"
 
-  get "/tips/:id/delete", to: "tips#destroy", as: "delete_tip"
+  delete "/tips/:id", to: "tips#destroy"
 
   ## CITIES ##
 
