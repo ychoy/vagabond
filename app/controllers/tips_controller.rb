@@ -3,7 +3,8 @@ class TipsController < ApplicationController
   before_action :set_tip, only: [:show, :edit, :update]
 
   def index
-    @tip = Tip.all
+    @tips = Tip.all
+
   end
 
   def new
@@ -22,6 +23,18 @@ class TipsController < ApplicationController
     redirect_to @tip
   end
 
+  def edit
+  end
+
+  def update
+    @tip.update_attributes(tip_params)
+    flash[:notice] = "Tip successfully updated"
+    redirect_to @tip
+  end
+
+  def destroy
+  end
+
   private
 
   def tip_params
@@ -30,7 +43,7 @@ class TipsController < ApplicationController
   end
 
   def set_tip
-    tip_id = params[:tip_id]
+    tip_id = params[:id]
     @tip = Tip.find_by_id(tip_id)
   end
 
