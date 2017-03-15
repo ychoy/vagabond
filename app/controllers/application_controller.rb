@@ -6,5 +6,5 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to login_path unless current_user
   end
-  
+
 end

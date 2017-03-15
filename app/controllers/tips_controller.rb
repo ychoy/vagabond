@@ -16,6 +16,9 @@ class TipsController < ApplicationController
 
   def create
     @tip = current_user.tips.create(tip_params)
+    city_id = session[:city]
+    @city = City.find(city_id)
+    @city.tips << @tip
     redirect_to @tip
   end
 

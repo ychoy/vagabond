@@ -1,7 +1,7 @@
 class Tip < ApplicationRecord
 
   belongs_to :user
-  belongs_to :city
+  belongs_to :city, optional: true
 
 
   validates :title, presence: true, length: { maximum:50 }
