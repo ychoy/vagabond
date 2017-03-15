@@ -1,9 +1,6 @@
-<%= form_for @tip do |f| %>
-  <div>
-    <%= f.text_field :title, placeholder: "Title" %>
-  </div>
-  <div>
-    <%= f.text_field :body, placeholder: "Body" %>
-  </div>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <h3> Create A Post </h3>
+  <%= render "form", tip: @tip %>
+  <br>
+  <%= link_to "Back", :back %>
+</div> 

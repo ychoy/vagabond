@@ -1,8 +1,21 @@
+<div class="container">
+ <div class = "row">
+   <div class="col-md-4">
+     <div class="img-thumbnail">
+       <%= image_tag @author.profile_image %>
+     </div>
+     <h3><strong> <%= @author.first_name %> <%= @author.last_name %></strong></h3>
+     <p><strong>Date Joined: </strong><%= (@author.created_at).strftime("%m/%d/%Y") %></p>
+     <p><strong>City: </strong> <%= @author.current_city %></p>
+   </div>
 
-<div>
-  <h3><%= @tip.title %></h3>
-  <h4>by <%= @author.first_name %> <%= @author.last_name %></h4>
-  <p><%= @tip.body %></p>
-  <hr>
-
+   <div class="col-md-8">
+     <h3><%= @tip.title %></h3>
+     <p><%= @tip.body %></p>
+     <br>
+     <button type="button" class="btn btn-info"><%= link_to "Edit", edit_tip_path(@tip) %></button>
+     <%= link_to "Back", :back %>
+     <br>
+   </div>
+ </div>
 </div>
