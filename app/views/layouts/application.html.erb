@@ -9,34 +9,34 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <p>
-        <small> <%= name.capitalize %>: <%= msg %> </small>
-      </p>
-    <% end %>
-    <div>
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Home", root_path %></li>
-        <!-- Conditional links (logged in vs not) -->
-        <% if current_user %>
-          <li><%= link_to "Profile", user_path(current_user) %></li>
-        <% else %>
-          <li><%= link_to "Create Account", new_user_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
-        <% end %>
-        </li>
-      </ul>
+    <nav class="navbar navbar-default">
+      <div class="container fluid">
 
-      <ul>
-        <!-- Conditional links (if logged in) -->
-        <% if current_user %>
-        <li><%= link_to "Log Out", logout_path %></li>
-        <li><%= link_to "Logged in as #{current_user.first_name}", user_path(current_user) %></a></li>
-        <% end %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Home", root_path %></li>
 
-      </ul>
+            <!-- Conditional links (logged in vs not) -->
+            <% if current_user %>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
+
+            <% else %>
+              <li><%= link_to "Create Account", new_user_path %></li>
+              <li><%= link_to "Log In", login_path %></li>
+            <% end %>
+
+          </ul>
+
+          <!-- Conditional links (if logged in) -->
+          <% if current_user %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Log Out", logout_path %></li>
+            <li><%= link_to "Logged in as #{current_user.first_name}", user_path(current_user) %></a></li>
+          </ul>
+          <% end %>
     </div>
+  </nav>
     <!--/.nav-collapse -->
+
 
     <% flash.each do |name, msg| %>
       <div class="alert <%= name == 'error' ? 'alert-danger' : 'alert-info' %>">
@@ -45,12 +45,14 @@
         </div>
       </div>
     <% end %>
+
     <div class="container site-content">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6">
           <%= yield %>
         </div>
       </div>
     </div>
+
   </body>
 </html>

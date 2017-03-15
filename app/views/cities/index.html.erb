@@ -1,0 +1,12 @@
+<div class="container">
+
+  <% @cities.each do |city| %>
+    <div class="carousel-item">
+      <%= image_tag @city.photo %>
+      <div class="carousel-caption d-none d-md-block">
+        <h3> <%= @city.name %></h3>
+      </div>
+    </div>
+  <% end %>
+
+</div>
