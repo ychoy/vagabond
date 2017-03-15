@@ -33,7 +33,7 @@ class TipsController < ApplicationController
   end
 
   def destroy
-    Tip.destroy(@tip)
+    @tip.destroy
     redirect_to root_path
   end
 
