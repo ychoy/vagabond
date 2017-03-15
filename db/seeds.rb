@@ -107,5 +107,3 @@ City.create({
   name: 'Honolulu',
   photo: 'http://lghttp.60358.nexcesscdn.net/8046264/images/page/-/100rc/img/City/Honolulu.jpg'
 })
-
-

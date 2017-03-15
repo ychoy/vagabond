@@ -2,6 +2,10 @@ class TipsController < ApplicationController
 
   before_action :set_tip, only: [:show, :edit, :update]
 
+  def index
+    @tip = Tip.all 
+  end
+
   def new
     @tip = Tip.new
   end
@@ -11,6 +15,7 @@ class TipsController < ApplicationController
   end
 
   def create
+
     @tip = current_user.tips.create(tip_params)
     redirect_to @tip
   end
@@ -18,7 +23,8 @@ class TipsController < ApplicationController
   private
 
   def tip_params
-    params.require(:tip).permit(:title, :body)
+  #  params[:user_id] = current_user.id
+    params.require(:tip).permit(:title, :body) #, :user_id)
   end
 
   def set_tip
