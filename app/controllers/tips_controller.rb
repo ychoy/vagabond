@@ -22,6 +22,7 @@ class TipsController < ApplicationController
   def create
     @tip = current_user.tips.create(tip_params)
     @city.tips << @tip
+    session[:city] = nil
     redirect_to @tip
   end
 
@@ -56,10 +57,10 @@ class TipsController < ApplicationController
   end
 
   def set_city_for_tip
-    if city_id = session[:city]
+    if (city_id = session[:city]) != nil
       @city = City.find(city_id)
     else
-      redirect_to cities_index_path
+      redirect_to cities_path
     end
   end
 
