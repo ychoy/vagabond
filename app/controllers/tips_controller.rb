@@ -33,22 +33,9 @@ class TipsController < ApplicationController
   end
 
   def update
-    tip_id = params[:id]
-    @tip = Tip.find_by_id(tip_id)
-
-
-
     @tip.update_attributes(tip_params)
 
-    flash[:notice] = @tip
-
-    # if @tip.update_attributes(tip_params)
-    #   flash[:notice] = "edit successful"
-    # else
-    #   flash[:error] = "ERROR edit unsuccessful"
-    # end
-
-
+    flash[:notice] = "Tip successfully updated"
     redirect_to @tip
   end
 
