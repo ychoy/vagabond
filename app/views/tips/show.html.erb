@@ -5,4 +5,5 @@
   <p><%= @tip.body %></p>
   <hr>
   <%= button_to "Edit", edit_tip_path(@tip), :method => "get", class: "btn btn-info" %>
+  <%= link_to "Delete tip", tip_path(@tip), :method => 'delete', :data => {:confirm => 'Are you sure you want to delete this post?'} %>
 </div>

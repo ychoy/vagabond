@@ -38,7 +38,6 @@ Rails.application.routes.draw do
 
   delete "/tips/:id", to: "tips#destroy"
 
-
   ## CITIES ##
 
   get "/cities", to: "cities#index", as: "cities"
