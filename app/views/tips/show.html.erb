@@ -4,5 +4,5 @@
   <h4>by <%= @author.first_name %> <%= @author.last_name %></h4>
   <p><%= @tip.body %></p>
   <hr>
-  <button type="button" class="btn btn-info"><%= link_to "Edit", edit_tip_path(@tip) %></button>
+  <%= button_to "Edit", edit_tip_path(@tip), :method => "get", class: "btn btn-info" %>
 </div>
