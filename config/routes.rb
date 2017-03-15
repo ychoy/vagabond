@@ -31,4 +31,19 @@ Rails.application.routes.draw do
 
   post "/tips", to: "tips#create"
 
+
+  ## CITIES ##
+
+  get "/cities", to: "cities#index", as: "cities"
+
+  get "/cities/new", to: "cities#new", as: "new_city"
+
+  get  "/cities/:id", to: "cities#show", as: "city"
+
+  post "/cities", to: "cities#create"
+
+  get "/cities/:id/edit", to: "cities#edit", as:"edit_city"
+
+  patch "/cities/:id", to: "cities#update", as: "update_city"
+
 end
