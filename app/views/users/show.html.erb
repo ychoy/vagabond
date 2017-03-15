@@ -7,7 +7,8 @@
      <h3><strong> <%= @user.first_name %> <%= @user.last_name %></strong></h3>
      <p><strong>Date Joined: </strong><%= (@user.created_at).strftime("%m/%d/%Y") %></p>
      <p><strong>City: </strong> <%= @user.current_city %></p>
-     <button type="button" class="btn btn-info"><%= link_to "Edit Profile", edit_user_path(@user) %></button>
+     <%= button_to "Edit", @user, method: :edit %>
+     <%= button_to "button" class="btn btn-info"><%= link_to "Edit Profile", edit_user_path(@user) %></button>
    </div>
 
    <div class="col-md-8">
