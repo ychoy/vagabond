@@ -1,6 +1,7 @@
 class TipsController < ApplicationController
 
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_city_for_tip, only: [:new, :create]
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
   before_action :set_owner, only: [:edit, :update, :destroy]
   before_action :authorize_owner, only: [:edit, :update, :destroy]
@@ -20,8 +21,6 @@ class TipsController < ApplicationController
 
   def create
     @tip = current_user.tips.create(tip_params)
-    city_id = session[:city]
-    @city = City.find(city_id)
     @city.tips << @tip
     redirect_to @tip
   end
@@ -54,6 +53,14 @@ class TipsController < ApplicationController
 
   def set_owner
     @owner = @tip.user
+  end
+
+  def set_city_for_tip
+    if city_id = session[:city]
+      @city = City.find(city_id)
+    else
+      redirect_to cities_index_path
+    end
   end
 
 end
