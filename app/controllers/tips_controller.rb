@@ -4,6 +4,7 @@ class TipsController < ApplicationController
 
   def index
     @tips = Tip.all
+
   end
 
   def new
@@ -19,6 +20,9 @@ class TipsController < ApplicationController
 
   def create
     @tip = current_user.tips.create(tip_params)
+    city_id = session[:city]
+    @city = City.find(city_id)
+    @city.tips << @tip
     redirect_to @tip
   end
 
