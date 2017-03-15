@@ -12,7 +12,7 @@ class CitiesController < ApplicationController
   end
 
   def create
-    @city = City.create()
+    @city = City.create(city_params)
     redirect_to @city
   end
 
@@ -24,6 +24,10 @@ class CitiesController < ApplicationController
 
 
   private
+
+  def city_params
+    params(:city).permit(:name, :photo)
+  end
 
   def set_city
     city_id = params[:id]
