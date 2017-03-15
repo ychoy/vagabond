@@ -107,8 +107,3 @@ City.create({
   name: 'Honolulu',
   photo: 'http://lghttp.60358.nexcesscdn.net/8046264/images/page/-/100rc/img/City/Honolulu.jpg'
 })
-
-users = User.order(:created_at).take(6)
-10.times do
-  users.each { |user| user.tips.create!(title: "best mom & mom restaurants", body: "hello world") }
-end
