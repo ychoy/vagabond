@@ -4,5 +4,6 @@
   <h4>by <%= @author.first_name %> <%= @author.last_name %></h4>
   <p><%= @tip.body %></p>
   <hr>
+  <%= link_to "Delete tip", delete_tip_path(@tip), :method => 'get', :data => {:confirm => 'Are you sure you want to delete this post?'} %>
 
 </div>

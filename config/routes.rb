@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ## will probably need to change this route going forward
 
   get "/", to: "cities#index", as: "root"
- 
+
 
   get "/users/new", to: "users#new", as: "new_user"
 
@@ -28,10 +28,11 @@ Rails.application.routes.draw do
 
   get "/tips/new", to: "tips#new", as: "new_tip"
 
-  get "/tips/:tip_id", to: "tips#show", as: "tip"
+  get "/tips/:id", to: "tips#show", as: "tip"
 
   post "/tips", to: "tips#create"
 
+  get "/tips/:id/delete", to: "tips#destroy", as: "delete_tip"
 
   ## CITIES ##
 
