@@ -15,6 +15,7 @@ class TipsController < ApplicationController
 
   def show
     @author = @tip.user
+    @city = City.find(@tip.city_id)
   end
 
   def create

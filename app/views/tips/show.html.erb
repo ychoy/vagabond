@@ -9,9 +9,11 @@
        <p><strong>City: </strong> <%= @author.current_city %></p>
 
      </div>
-   </div>
-   <div class="col-md-8">
+    </div>
+  <div class="col-md-8">
+
      <h3><%= @tip.title %></h3>
+     <%= link_to @city.name, city_path(@city) %>
      <p><%= @tip.body %></p>
      <br>
      <%= button_to "Edit", edit_tip_path(@tip), :method => "get", class: "btn btn-primary" %>
