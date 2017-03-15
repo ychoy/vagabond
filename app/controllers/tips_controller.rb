@@ -11,7 +11,10 @@ class TipsController < ApplicationController
   end
 
   def show
+    @tip
+
     @author = User.find(@tip.user_id)
+
   end
 
   def create
@@ -33,13 +36,16 @@ class TipsController < ApplicationController
 
     @tip.update_attributes(tip_params)
 
+    flash[:notice] = @tip
 
     # if @tip.update_attributes(tip_params)
     #   flash[:notice] = "edit successful"
     # else
     #   flash[:error] = "ERROR edit unsuccessful"
     # end
-    redirect_to tip_path(@tip)
+
+
+    redirect_to @tip
   end
 
   def destroy
@@ -53,7 +59,7 @@ class TipsController < ApplicationController
   end
 
   def set_tip
-    tip_id = params[:tip_id]
+    tip_id = params[:id]
     @tip = Tip.find_by_id(tip_id)
   end
 

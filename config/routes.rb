@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   get "/tips/new", to: "tips#new", as: "new_tip"
 
-  get "/tips/:tip_id", to: "tips#show", as: "tip"
+  get "/tips/:id", to: "tips#show", as: "tip"
 
   post "/tips", to: "tips#create"
 
