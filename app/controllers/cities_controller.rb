@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
 
   before_action :set_city, only: [:show]
+  before_action :require_login, only: [:new, :create, :edit, :update]
 
   def index
     @cities = City.all
