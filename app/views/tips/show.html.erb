@@ -1,28 +1,30 @@
 <div class="container">
-  <div class = "row">
-   <div class="col-md-4 tip-show-profile">
-     <div class="row" style="width: 30rem;">
-      <br>
-       <%= image_tag @author.profile_image %>
+  <div class="col-md-4">
+    <br>
+    <div class="row" style="width: 30rem;">
+      <%= image_tag @author.profile_image, class: "img-responsive"%>
+      <div class="caption">
+        <h3><strong> <%= @author.first_name %> <%= @author.last_name %></strong></h3>
+        <p><strong>Date Joined: </strong><%= (@author.created_at).strftime("%m/%d/%Y") %></p>
+        <p><strong>City: </strong> <%= @author.current_city %></p>
+        <br>
 
-       <h3><strong> <%= @author.first_name.titleize %> <%= @author.last_name.titleize %></strong></h3>
-       <p><strong>Date Joined: </strong><%= (@author.created_at).strftime("%m/%d/%Y") %></p>
-       <p><strong>City: </strong> <%= @author.current_city.titleize %></p>
-
-     </div>
+      </div>
     </div>
+  </div>
+
+
   <div class="col-md-8">
-
-     <h3><%= @tip.title.titleize %></h3>
-     <%= link_to @city.name.titleize, city_path(@city) %>
-     <p><%= @tip.body %></p>
-     <br>
-       <%= button_to "Edit", edit_tip_path(@tip), :method => "get", class: "btn btn-primary tip-button" %>
-       <br>
-       <%= button_to "Delete #{tip_rename}", tip_path(@tip), :method => 'delete', :data => {:confirm => "Are you sure you want to delete #{@tip.title}?"},  class: "btn btn-danger tip-button" %>
-
-   </div>
+   <h3><%= @tip.title.titleize %></h3>
+   <%= link_to @city.name.titleize, city_path(@city) %>
+   <p><%= @tip.body %></p>
+   <br>
+   <%= button_to "Edit", edit_tip_path(@tip), :method => "get", class: "btn btn-primary tip-button" %>
+   <br>
+   <%= button_to "Delete #{tip_rename}", tip_path(@tip), :method => 'delete', :data => {:confirm => "Are you sure you want to delete #{@tip.title}?"},  class: "btn btn-danger tip-button" %>
  </div>
+
+</div>
 </div>
 
 
