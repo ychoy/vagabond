@@ -9,16 +9,18 @@
 
 
 <% @cities.each do |city| %>
-  <div class="card group">
+  <div class="card-group">
     <div class="col-md-4">
       <div class="card card-inverse">
+
         <div class= "img-wrapper">
           <%= image_tag city.photo, class: "card-img img-thumbnail", alt:"Card image cap" %>
         </div>
+
         <div class="card-img-overlay">
-          <h4 class="card-title text-center homepage-a">
+          <h2 class="card-title text-center city_caption_a">
             <%= link_to city.name.titleize, city_path(city) %>
-          </h4>
+          </h2>
         </div>
       </div>
     </div>

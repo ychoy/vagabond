@@ -7,7 +7,8 @@
 }
 
 .jumbotron {
-  background-color: #9affec;
+  padding-top: 0px;
+  background-color: #def3f6;
 }
 
 .city-img {
@@ -16,7 +17,7 @@
 
 .city-img-caption {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 0%;
   width: 100%;
 }
@@ -26,6 +27,7 @@
   padding-bottom: 100%;
   overflow: hidden;
   width: 100%;
+  background-color: #def3f6;
 }
 .img-thumbnail {
   position: absolute;
@@ -44,28 +46,54 @@
 
 .homepage-a {
   text-align: center;
-  color: white;
+  color: #E6FFFF;
   text-shadow: 2px 2px 5px #000000;
+  text-decoration: none;
+}
+
+.card-title.text-center.city_caption_a a {
+  color: #E6FFFF;
+  text-shadow: 2px 2px 5px #000000;
+  text-decoration: none;
 }
 
 .jumbotron h1 {
   text-align: center;
-  color: #fcfbe3;
+  color: #FFFFFF;
   text-shadow: 2px 2px 5px #000000;
 }
 
 body {
-  background-color: #9affec
+  background-color: #def3f6;
+  margin-bottom: 20px;
 }
 
 .navbar-default {
-  background-color: #9affec;
-  border-color: #9affec
+  background-color: #76B6C4;
+  opacity: .8;
 }
+
+.navbar-header {
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+a {
+  color: #76B6C4;
+  text-decoration: none;
+}
+
+.city-idx-field {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+
+
 
 /* title */
 .navbar-default .navbar-brand {
-    color: #777;
+    color: #EEF6F2;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -73,7 +101,7 @@ body {
 }
 /* link */
 .navbar-default .navbar-nav > li > a {
-    color: #777;
+    color: #EEF6F2;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -93,13 +121,13 @@ body {
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: #777;
-    border-bottom-color: #777;
+    border-top-color: #EEF6F2;
+    border-bottom-color: #EEF6F2;
 }
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
 .navbar-default .navbar-nav > .dropdown > a:focus .caret {
-    border-top-color: #333;
-    border-bottom-color: #333;
+    border-top-color: #EEF6F2;
+    border-bottom-color: #EEF6F2;
 }
 .navbar-default .navbar-nav > .open > a .caret,
 .navbar-default .navbar-nav > .open > a:hover .caret,
@@ -109,11 +137,11 @@ body {
 }
 /* mobile version */
 .navbar-default .navbar-toggle {
-    border-color: #DDD;
+    border-color: #EEF6F2;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #DDD;
+    background-color: #EEF6F2;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #CCC;
@@ -127,3 +155,26 @@ body {
         color: #333;
     }
 }
+
+
+/*
+cream
+#fcfbe3
+RGB value is (252,251,227).
+
+light blue
+#b0ebff
+(176,235,255).
+
+light teal blue
+#9affec
+(154,255,236).
+
+teal aquamarine
+#54baab
+RGBA (84,186,171).
+
+aquamarine
+#66CDAA
+RGB value is (102,205,170).
+*/
