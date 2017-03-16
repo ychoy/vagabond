@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   before_action :require_login, only: [:edit, :update]
-  before_action :set_user, only: [:edit, :show, :update]
-  before_action :authorize_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :show, :update, :destroy]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
 
   def index
@@ -35,6 +35,15 @@ class UsersController < ApplicationController
       flash[:error] = @user.errors.full_messages.join(", ")
       redirect_to edit_user_path(@user)
     end
+  end
+
+  def destroy
+
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "Successfully removed account and hints."
+    redirect_to root_path
+
   end
 
   private
