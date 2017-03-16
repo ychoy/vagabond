@@ -10,8 +10,15 @@
    </div>
 
    <div class="col-md-8">
-     <% @user.tips.each do |tip| %>
+
+
+    ######
+
+<%= @tips.last.city.name %>
+     <% @tips.each do |tip| %>
+
        <h4><%= link_to tip.title, tip_path(tip) %></h4>
+       <%= tip.city.name %>
        <p><%= tip.body %></p>
      <% end %>
      <br>
