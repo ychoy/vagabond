@@ -1,8 +1,8 @@
 class TipsController < ApplicationController
 
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_city_for_tip, only: [:new]
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
+  before_action :set_city_for_tip, only: [:new, :edit]
   before_action :set_owner, only: [:edit, :update, :destroy]
   before_action :authorize_owner, only: [:edit, :update, :destroy]
 
@@ -57,7 +57,9 @@ class TipsController < ApplicationController
   end
 
   def set_city_for_tip
-    if params[:city]
+    if @tip
+      @selected_city = @tip.city_id
+    elsif params[:city]
       city_id = params[:city]
       @city = City.find(city_id)
       @selected_city = @city.id
