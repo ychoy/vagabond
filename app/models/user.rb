@@ -16,7 +16,6 @@ class User < ApplicationRecord
     }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-
   def self.confirm(params)
     @user = User.find_by({email: params[:email]})
     @user ? @user.authenticate(params[:password]) : false

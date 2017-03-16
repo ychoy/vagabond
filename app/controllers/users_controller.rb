@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @city = City.all
     @tips = @user.tips
   end
 

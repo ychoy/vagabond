@@ -1,6 +1,22 @@
-<h1 class="text-center"> Update <%= tip_rename %> </h1>
-<div class='row'>
-  <div class='col-md-6 col-md-offset-3'>
-    <%= render "form", tip: @tip %>
+<div class="container">
+  <h1 class="text-center"> Update <%= tip_rename %> </h1>
+  <div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+      <%= form_for @tip do |f| %>
+        <div class="form-group">
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, placeholder: "Title", class: "form-control", autofocus: true %>
+          </div>
+          <div class="form-group">
+            <%= f.label :body %>
+            <%= f.text_field :body, placeholder: "Content", class: "form-control", autofocus: true %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Save Post", class: "btn btn-block btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
