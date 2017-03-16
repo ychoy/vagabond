@@ -25,7 +25,8 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-3 col-md-3">
-        <%= button_to "Add New #{tip_rename}", new_tip_path(:city => @city.id), :method => "get", class: "btn btn-block btn-primary" %>
+       <!-- why does this link look like a button? BECAUSE: https://github.com/rails/rails/issues/2158 -->
+        <%= link_to "Add New #{tip_rename}", new_tip_path(:city => @city.id), :method => "get", :class => "btn btn-primary" %>
       </div>
     </div>
   </div>
