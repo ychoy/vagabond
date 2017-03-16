@@ -5,10 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Tip.destroy_all
 User.destroy_all
 City.destroy_all
-
 
 User.create({
   first_name: 'Nicolás',
@@ -81,30 +79,30 @@ City.create({
 
 City.create({
   name: 'London',
-  photo: 'https://media.timeout.com/images/100644443/image.jpg'
+  photo: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1446144997/london-header-dg1015.jpg?itok=7tScDQ8t'
 })
 
 City.create({
   name: 'Gibraltar',
-  photo: 'http://www.visitgibraltar.gi/images/homepage_slider/df1aw_slide2.jpeg'
+  photo: 'http://oht-webcontent.s3.amazonaws.com/one_hour_photo/Gibraltar.jpg'
 })
 
 City.create({
   name: 'Havana',
-  photo: 'https://s-media-cache-ak0.pinimg.com/736x/6d/da/79/6dda79613348731c2fe0711a00872ef7.jpg'
+  photo: 'http://www.ralphlauren.com/file_source/RalphLauren/Magazine-Issues/2015/12-December/media/formats/Undiscovered_Havana_HERO_crop_articlehero_large.jpg?950025.9624328464'
 })
 
 City.create({
   name: 'Ibiza',
-  photo: 'https://media-cdn.tripadvisor.com/media/photo-s/06/8d/1f/6a/linda-playa.jpg'
+  photo: 'http://ibiza-knowhow.com/wp-content/uploads/2017/03/Ibiza.jpg'
 })
 
 City.create({
   name: 'Hong Kong',
-  photo: 'http://www.discoverhongkong.com/common/images_awc2/thematic-banner-2016/home-banner-large.jpg'
+  photo: 'https://transversos.files.wordpress.com/2014/07/hong-kong.jpg'
 })
 
 City.create({
   name: 'Honolulu',
-  photo: ''
+  photo: 'http://paradiseintheworld.com/wp-content/uploads/2012/03/honolulu-beach.jpg'
 })

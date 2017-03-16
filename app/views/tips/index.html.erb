@@ -1,7 +1,0 @@
-<div class="container">
-  <% @tips.each do |tip| %>
-   <h3><%= link_to tip.title, tip_path(tip) %></h3>
-   <p><%= tip.body %></p>
-   <p> By: <%= tip.user.first_name %> <%= tip.user.last_name %> </p>
-  <% end %>
-</div>
