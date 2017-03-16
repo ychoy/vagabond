@@ -60,6 +60,9 @@ class TipsController < ApplicationController
     if params[:city]
       city_id = params[:city]
       @city = City.find(city_id)
+      @selected_city = @city.id
+    else
+      @selected_city = nil
     end
   end
 
