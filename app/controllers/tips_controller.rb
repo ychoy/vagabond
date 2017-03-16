@@ -1,14 +1,13 @@
 class TipsController < ApplicationController
 
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_city_for_tip, only: [:new, :create]
+  before_action :set_city_for_tip, only: [:new]
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
   before_action :set_owner, only: [:edit, :update, :destroy]
   before_action :authorize_owner, only: [:edit, :update, :destroy]
 
   def index
     @tips = Tip.all
-
   end
 
   def new
@@ -21,8 +20,8 @@ class TipsController < ApplicationController
 
   def create
     @tip = current_user.tips.create(tip_params)
+    @city=City.find(tip_params[:city_id])
     @city.tips << @tip
-    session[:city] = nil
     redirect_to @tip
   end
 
@@ -44,7 +43,7 @@ class TipsController < ApplicationController
 
   def tip_params
   #  params[:user_id] = current_user.id
-    params.require(:tip).permit(:title, :body) #, :user_id)
+    params.require(:tip).permit(:title, :body, :city_id) #, :user_id)
   end
 
   def set_tip
@@ -57,10 +56,9 @@ class TipsController < ApplicationController
   end
 
   def set_city_for_tip
-    if (city_id = session[:city]) != nil
+    if params[:city]
+      city_id = params[:city]
       @city = City.find(city_id)
-    else
-      redirect_to cities_path
     end
   end
 

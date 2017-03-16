@@ -8,7 +8,7 @@ class CitiesController < ApplicationController
   end
 
   def show
-    set_city_cookie
+    
   end
 
   def new
@@ -35,10 +35,6 @@ class CitiesController < ApplicationController
   def set_city
     city_id = params[:id]
     @city = City.find_by_id(city_id)
-  end
-
-  def set_city_cookie
-    session[:city] = @city.id
   end
 
 end
