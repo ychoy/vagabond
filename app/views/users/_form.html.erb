@@ -10,15 +10,15 @@
     </div>
     <div class="form-group">
       <%= f.label :current_city %>
-      <%= f.text_field :current_city, placeholder: "Current City" %>
+      <%= f.text_field :current_city, placeholder: "Current City", class: "form-control", autofocus: true %>
     </div>
     <div class="form-group">
       <%= f.label :profile_image %>
-      <%= f.text_field :profile_image, placeholder: "Enter url for your profile image" %>
+      <%= f.text_field :profile_image, placeholder: "Enter profile image url", class: "form-control", autofocus: true %>
     </div>
     <div class="form-group">
     	<%= f.label :email %>
-      <%= f.text_field :email, placeholder: "Email", autofocus: true, class: "form-control" %>
+      <%= f.email_field :email, placeholder: "Email", autofocus: true, class: "form-control" %>
     </div>
     <div class="form-group" >
       <%= f.label :password %>
@@ -29,5 +29,3 @@
     </div>
   </div>
 <% end %>
-
-<br>
