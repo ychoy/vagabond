@@ -4,13 +4,14 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :show, :update, :destroy]
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
-  # index will likely be moved
+
   def index
     @users = User.all
   end
 
   def show
-
+    # @city = City.all
+    @tips = @user.tips
   end
 
   def new
@@ -24,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   def update

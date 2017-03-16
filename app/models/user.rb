@@ -13,7 +13,7 @@ class User < ApplicationRecord
       with: /@/,
       message: "not a valid format"
     }
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: false
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
 
   def self.confirm(params)
