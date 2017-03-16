@@ -1,5 +1,4 @@
 <div class="container">
-<<<<<<< s1_user_buttons
   <div class = "row">
     <div class="col-md-4">
       <div class="profile_img text-center">
@@ -16,31 +15,10 @@
     <div class="col-md-8">
       <% @user.tips.each do |tip| %>
         <h4><%= link_to tip.title, tip_path(tip) %></h4>
+        <p class="small"><%= tip.city.name %></p>
         <p><%= tip.body %></p>
      <% end %>
      <br>
    </div>
  </div>
-=======
- <div class = "row">
-   <div class="col-md-4">
-     <div class="img-thumbnail">
-       <%= image_tag @user.profile_image %>
-     </div>
-     <h3><strong> <%= @user.first_name %> <%= @user.last_name %></strong></h3>
-     <p><strong>Date Joined: </strong><%= (@user.created_at).strftime("%m/%d/%Y") %></p>
-     <p><strong>City: </strong> <%= @user.current_city %></p>
-   </div>
-<hr>
-    <div class="col-md-8">
-      <% @tips.each do |tip| %>
-        <h4><%= link_to tip.title, tip_path(tip) %></h4>
-        <p class="small"><%= tip.city.name %></p>
-        <p><%= tip.body %></p>
-        <hr>
-      <% end %>
-      <br>
-    </div>
-  </div>
->>>>>>> master
 </div>
