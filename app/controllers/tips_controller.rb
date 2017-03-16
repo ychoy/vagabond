@@ -8,7 +8,6 @@ class TipsController < ApplicationController
 
   def index
     @tips = Tip.all
-
   end
 
   def new
@@ -16,6 +15,7 @@ class TipsController < ApplicationController
   end
 
   def show
+    @city = City.find_by_id(@tip.city_id)
     @author = @tip.user
   end
 
