@@ -11,6 +11,8 @@
   background-color: #def3f6;
 }
 
+
+
 .city-img {
   position: relative;
 }
@@ -52,6 +54,14 @@ body {
 a {
   color: #76B6C4;
   text-decoration: none;
+}
+
+.tip-button {
+  display: inline-block;
+}
+
+.tip-show-profile {
+  padding-left: 30px;
 }
 
 .city-idx-field {
