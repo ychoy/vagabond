@@ -20,10 +20,16 @@ class TipsController < ApplicationController
   end
 
   def create
-    @tip = current_user.tips.create(tip_params)
-    @city=City.find(tip_params[:city_id])
-    @city.tips << @tip
-    redirect_to @tip
+    if valid_city? && valid_tip_params?
+      @tip = current_user.tips.create(tip_params)
+      @city=City.find(tip_params[:city_id])
+      @city.tips << @tip
+      flash[:notice] = tip_rename + " successfully created"
+      redirect_to @tip
+    else
+      flash[:error] = tip_rename + " could not be created"
+      redirect_to new_tip_path
+    end
   end
 
   def edit
@@ -66,6 +72,14 @@ class TipsController < ApplicationController
     else
       @selected_city = nil
     end
+  end
+
+  def valid_city?
+    City.find_by_id(tip_params[:city_id])
+  end
+
+  def valid_tip_params?
+    current_user.tips.new(tip_params).valid?
   end
 
 end
