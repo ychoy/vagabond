@@ -2,7 +2,34 @@
 
 .object-fit_contain { object-fit: contain }
 
-
 .profile-bold {
   font-weight: 15px;
+}
+ 
+.jumbotron {
+  background-color: white;
+}
+
+.city-img {
+  position: relative;
+}
+
+.city-img-caption {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 100%;
+}
+
+
+.homepage-a {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px #000000;
+}
+
+.jumbotron h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px #000000;
 }
