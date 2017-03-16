@@ -21,15 +21,30 @@
   width: 100%;
 }
 
-.img.card-img.img-thumbnail {
-  max-width: 90%;
-  min-height: 5em;
+.img-wrapper {
+  position: relative;
+  padding-bottom: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+.img-thumbnail {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
 }
 
+.card-title {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 100%;
+}
 
 .homepage-a {
   text-align: center;
-  color: #fcfbe3;
+  color: white;
   text-shadow: 2px 2px 5px #000000;
 }
 
@@ -112,25 +127,3 @@ body {
         color: #333;
     }
 }
-
-/*
-cream
-#fcfbe3
-RGB value is (252,251,227).
-
-light blue
-#b0ebff
-(176,235,255).
-
-light teal blue
-#9affec
-(154,255,236).
-
-teal aquamarine
-#54baab
-RGBA (84,186,171).
-
-aquamarine
-#66CDAA
-RGB value is (102,205,170).
-*/
