@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   patch "/users/:id", to: "users#update", as: "update_user"
 
-  delete "/users/:id", to: "users#destroy" 
+  delete "/users/:id", to: "users#destroy"
 
   ## SESSIONS ##
   get "/login", to: "sessions#new"
@@ -53,5 +53,9 @@ Rails.application.routes.draw do
   get "/cities/:id/edit", to: "cities#edit", as:"edit_city"
 
   patch "/cities/:id", to: "cities#update", as: "update_city"
+
+  ## 404 ##
+
+  match "*path", to: "application#page_not_found", via: :all
 
 end
