@@ -1,6 +1,10 @@
-<div class="container">
-  <%= image_tag("lvg_yanyinchoy.png", width: "100%", class:"img-fluid", alt:"homepage photo") %>
+<div class="jumbotron">
+
+    <%= image_tag("lvg_yanyinchoy.png", width: "100%", class:"img-fluid", alt:"homepage photo") %>
+ 
 </div>
+
+
 <br>
 <% @cities.each do |city| %>
   <div class="card group">
@@ -14,5 +18,3 @@
     </div>
   </div>
 <% end %>
-
- 

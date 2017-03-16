@@ -1,6 +1,24 @@
-<h3> <%= @city.name %></h3>
-<img class='banner-img' src=<%= @city.photo%>>
-<%= button_to "Add New #{tip_rename}", new_tip_path, method: "get"%>
-<% @city.tips.each do |tip|%>
-  <%= link_to tip.title, tip_path(tip) %> <br>
-<% end %>
+<div class="container">
+  <div class='jumbotron'>
+    <h3> <%= @city.name %></h3>
+    <img class='img-responsive' src=<%= @city.photo%>>
+  </div>
+  <div class="row">
+    <div class="card group">
+      <div class="col-md-4">
+        <div class="card-block">
+          <% @city.tips.order(created_at: :desc).each do |tip|%>
+            <strong><%= link_to tip.title.titleize, tip_path(tip) %></strong>
+            by <%= link_to "#{tip.user.first_name} #{tip.user.last_name}", user_path(tip.user) %>
+            <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <button><%= link_to "Add New #{tip_rename}", new_tip_path(:city => @city.id), method: "get"%></button>   
+  </div>
+</div>

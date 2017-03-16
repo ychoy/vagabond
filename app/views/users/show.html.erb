@@ -1,22 +1,24 @@
 <div class="container">
- <div class = "row">
-   <div class="col-md-4">
-     <div class="img-thumbnail">
-       <%= image_tag @user.profile_image %>
-     </div>
-     <h3><strong> <%= @user.first_name %> <%= @user.last_name %></strong></h3>
-     <p><strong>Date Joined: </strong><%= (@user.created_at).strftime("%m/%d/%Y") %></p>
-     <p><strong>City: </strong> <%= @user.current_city %></p>
-   </div>
-<hr>
+  <div class = "row">
+    <div class="col-md-4">
+      <div class="profile_img text-center">
+        <%= image_tag @user.profile_image %>
+      </div>
+      <h3><strong> <%= @user.first_name %> <%= @user.last_name %></strong></h3>
+      <p><strong>Date Joined: </strong><%= (@user.created_at).strftime("%m/%d/%Y") %></p>
+      <p><strong>City: </strong> <%= @user.current_city %></p>
+      <%= button_to "Edit Profile", edit_user_path(@user), :method => "get", class: "btn btn-block btn-primary" %>
+      <br>
+      <%= button_to "Remove", @user, method: :delete, data: {confirm: "Are you sure you want to delete your account? All hints will be removed."}, class: "btn btn-block btn-danger"  %>
+    </div>
+
     <div class="col-md-8">
-      <% @tips.each do |tip| %>
+      <% @user.tips.each do |tip| %>
         <h4><%= link_to tip.title, tip_path(tip) %></h4>
         <p class="small"><%= tip.city.name %></p>
         <p><%= tip.body %></p>
-        <hr>
-      <% end %>
-      <br>
-    </div>
-  </div>
+     <% end %>
+     <br>
+   </div>
+ </div>
 </div>
