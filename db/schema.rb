@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315014035) do
+ActiveRecord::Schema.define(version: 20170316091754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20170315014035) do
     t.string   "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "tip_id"
+    t.index ["tip_id"], name: "index_comments_on_tip_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "tips", force: :cascade do |t|
@@ -44,6 +54,8 @@ ActiveRecord::Schema.define(version: 20170315014035) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "comments", "tips"
+  add_foreign_key "comments", "users"
   add_foreign_key "tips", "cities"
   add_foreign_key "tips", "users"
 end

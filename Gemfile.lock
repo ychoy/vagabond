@@ -171,7 +171,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.2)
   sass-rails (~> 5.0)
-  spring
+  spring (~> 2.0.1)
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data
