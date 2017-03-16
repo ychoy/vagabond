@@ -18,9 +18,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    login(@user)
-    redirect_to @user
+    if valid_user_params?
+      @user = User.create(user_params)
+      Rails.logger.info(@user.errors.inspect)
+      login(@user)
+      redirect_to user_path(@user)
+    else
+      flash[:error] = "Oh no, enter better stuff!"
+      redirect_to new_user_path
+    end
   end
 
   def edit
@@ -54,6 +60,10 @@ class UsersController < ApplicationController
   def set_user
     user_id = params[:id]
     @user = User.find_by_id(user_id)
+  end
+
+  def valid_user_params?
+    User.new(user_params).valid?
   end
 
 end
