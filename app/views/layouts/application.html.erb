@@ -30,7 +30,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
-              <li><%= link_to "Profile", user_path(current_user) %></li>
+              <li><%= link_to "Profile", user_path(current_user), class:"nav-links" %></li>
               <li><%= link_to "Log Out", logout_path %></li>
             <% else %>
               <li><%= link_to "Create Account", new_user_path %></li>
@@ -49,6 +49,14 @@
       </div>
     <% end %>
 
-    <%= yield %>
+    <div class="city-idx-field">
+      <%= yield %>
+      <br>
+      <br>
+    </div>
+
+    <br>
+    <br>
+
   </body>
 </html>
