@@ -20,7 +20,7 @@ class TipsController < ApplicationController
   end
 
   def create
-    if City.find_by_id(tip_params[:city_id])
+    if valid_city? && valid_tip_params?
       @tip = current_user.tips.create(tip_params)
       @city=City.find(tip_params[:city_id])
       @city.tips << @tip
@@ -72,6 +72,14 @@ class TipsController < ApplicationController
     else
       @selected_city = nil
     end
+  end
+
+  def valid_city?
+    City.find_by_id(tip_params[:city_id])
+  end
+
+  def valid_tip_params?
+    current_user.tips.new(tip_params).valid?
   end
 
 end
