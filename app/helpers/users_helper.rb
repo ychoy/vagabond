@@ -19,4 +19,10 @@ module UsersHelper
     end
   end
 
+  def is_admin?
+    if logged_in?
+      current_user[:admin]
+    end
+  end
+
 end

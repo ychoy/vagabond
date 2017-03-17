@@ -1,15 +1,21 @@
+
 <div class="col-md-12 full-width">
+
   <div class='jumbotron'>
     <%=image_tag @city.photo, class: "img-responsive city-img text-center"%>
     <div class="city-img-caption">
       <h1 class="text-center"><%= @city.name %><h1>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6 col-md-offset-3">
+          <% if is_admin? %>
          <!-- why does this link look like a button? BECAUSE: https://github.com/rails/rails/issues/2158 -->
-         <%= link_to "Add New #{tip_rename}", new_tip_path(:city => @city.id), :method => "get", :class => "btn btn-primary tip-button featured" %>
+          <%= link_to "Add New #{tip_rename}", new_tip_path(:city => @city.id), :method => "get", :class => "btn btn-primary tip-button featured" %>
+         <% end %>
+
        </div>
      </div>
    </div>

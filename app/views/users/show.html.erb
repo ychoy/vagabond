@@ -8,12 +8,23 @@
         <p><strong>Date Joined: </strong><%= (@user.created_at).strftime("%b %d, %Y") %></p>
         <p><strong>City: </strong> <%= @user.current_city %></p>
         <br>
-        <% if @user == current_user  %>
+        <% if is_admin? && (current_user == @user)  %>
           <div class="card">
+
             <%= button_to "Edit Profile", edit_user_path(@user), :method => "get", class: "btn btn-block tip-button" %>
             <br>
             <%= link_to "Delete Profile", @user, method: :delete, data: {confirm: "Are you sure you want to delete your account? All hints will be removed."}  %>
+            <br>
+
           </div>
+
+          <% elsif current_user == @user %>
+
+          <div class="card">
+            <%= button_to "Edit Profile", edit_user_path(@user), :method => "get", class: "btn btn-block btn-primary" %>
+            <br>
+          </div>
+
         <% end %>
       </div>
     </div>
@@ -21,24 +32,26 @@
   <div class="col-md-8">
     <%= button_to "+", new_tip_path(@tip), :method => "get", class: "btn tip-button side-btn btn-offset" %>
     <br>
-    <% if current_user == @user %>
-      <h3> Your Hints </h3>
-    <% else %>
+    <% if is_admin? && (current_user == @user) %>
       <h3> <%= @user.first_name%>'s Hints</h3>
-    <% end %>
-    <hr>
-    <% if @user.tips.first == nil %>
+      <hr>
       <p>You haven't added any hints!</p>
     <% end %>
+
     <% @user.tips.each do |tip| %>
       <h4><%= link_to tip.title.titleize, tip_path(tip) %></h4>
       <h6> <%= tip.city.name %></h6>
-      <h6><%= tip.created_at.strftime('%b %d, %Y') %></h6>
+      <h6> Posted on: <%= tip.created_at.strftime('%b %d, %Y') %></h6>
       <br>
+
       <p><%= "#{tip.body.truncate(256)}" %></p>
-      <div class="text-right">
-        <%= link_to "Read More", tip_path(tip) %>
-      </div>
+
+      <% if tip.body.length > 256 %>
+        <div class="text-right">
+          <%= link_to "Read More", tip_path(tip) %>
+        </div>
+      <% end %>
+
       <hr>
     <% end %>
   </div>

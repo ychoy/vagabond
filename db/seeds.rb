@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 User.destroy_all
 City.destroy_all
 
@@ -12,10 +13,10 @@ User.create({
   first_name: 'Nicolás',
   last_name: 'Dominguez',
   current_city: 'Havana',
-  profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
-  email: 'nicolas@me.com',
+  profile_image: 'https://photos.smugmug.com/2017/22817-GA-Headshots/n-567HZr/i-wcZdTHf/0/XL/i-wcZdTHf-XL.jpg',
+  email: 'nicolas@lavagabond.com',
   password: 'nicolas',
-  admin: false
+  admin: true
 })
 
 User.create({
@@ -23,9 +24,9 @@ User.create({
   last_name: 'Yamaguchi',
   current_city: 'Honolulu',
   profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
-  email: 'Rayne@me.com',
+  email: 'Rayne@lavagabond.com',
   password: 'Rayne',
-  admin: false
+  admin: true
 })
 
 
@@ -33,17 +34,17 @@ User.create({
   first_name: 'Faustino',
   last_name: 'Guadarrama',
   current_city: 'Ibiza',
-  profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
-  email: 'faustino@me.com',
+  profile_image: 'https://photos.smugmug.com/2017/22817-GA-Headshots/n-567HZr/i-cHKjX6s/0/XL/i-cHKjX6s-XL.jpg',
+  email: 'faustino@lavagabond.com',
   password: 'faustino',
-  admin: false
+  admin: true
 })
 
 User.create({
   first_name: 'Mariabella',
   last_name: 'Attwater',
   current_city: 'Gibraltar',
-  profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
+  profile_image: 'https://photos.smugmug.com/2017/22817-GA-Headshots/n-567HZr/i-bCSX2HJ/0/XL/i-bCSX2HJ-XL.jpg',
   email: 'mariabella@levagabond.com',
   password: 'mariabella',
   admin: true
@@ -53,10 +54,10 @@ User.create({
   first_name: 'Fatima',
   last_name: 'Ojamehedi',
   current_city: 'London',
-  profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
-  email:'fatima@me.com',
+  profile_image: 'https://photos.smugmug.com/2017/22817-GA-Headshots/n-567HZr/i-BBZ6fgX/0/XL/i-BBZ6fgX-XL.jpg',
+  email:'fatima@lavagabond.com',
   password:' fatima',
-  admin: false
+  admin: true
 })
 
 User.create({
@@ -64,16 +65,16 @@ User.create({
   last_name: 'Reyes',
   current_city: 'San Francisco',
   profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
-  email: 'darwin@me.com',
+  email: 'darwin@lavagabond.com',
   password:' password',
-  admin: false
+  admin: true
 })
 
 User.create({
   first_name: 'Marisol',
   last_name: 'Yen',
   current_city: 'Hong Kong',
-  profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
+  profile_image: 'https://photos.smugmug.com/2017/22817-GA-Headshots/n-567HZr/i-VBm5TM4/0/XL/i-VBm5TM4-XL.jpg',
   email: 'marisol@levagabond.com',
   password: 'marisol',
   admin: true
