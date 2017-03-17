@@ -36,12 +36,17 @@
     <% @user.tips.each do |tip| %>
       <h4><%= link_to tip.title.titleize, tip_path(tip) %></h4>
       <h6> <%= tip.city.name %></h6>
-      <h6><%= tip.created_at.strftime('%b %d, %Y') %></h6>
+      <h6> Posted on: <%= tip.created_at.strftime('%b %d, %Y') %></h6>
       <br>
+
       <p><%= "#{tip.body.truncate(256)}" %></p>
-      <div class="text-right">
-        <%= link_to "Read More", tip_path(tip) %>
-      </div>
+
+      <% if tip.body.length > 256 %>
+        <div class="text-right">
+          <%= link_to "Read More", tip_path(tip) %>
+        </div>
+      <% end %>
+
       <hr>
     <% end %>
   </div>
