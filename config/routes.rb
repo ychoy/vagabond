@@ -42,12 +42,10 @@ Rails.application.routes.draw do
 
   ## COMMENTS ##
 
-  # comments as a nested resource within tips
+  #comments as a nested resource within tips
   resources :tips do
     resources :comments
   end
-
-
 
   ## CITIES ##
 
