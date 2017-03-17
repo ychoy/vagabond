@@ -22,6 +22,7 @@
         <div class="col-md-12 tip-container">
           <strong><%= link_to tip.title.titleize, tip_path(tip) %></strong>
           by <%= link_to "#{tip.user.first_name} #{tip.user.last_name}", user_path(tip.user) %>
+          :: <%= tip.created_at.strftime("%b %d, %Y") %>
         </div>
         <br>
         <% end %>
@@ -31,4 +32,3 @@
   <br>
   <br>
 </div>
-
