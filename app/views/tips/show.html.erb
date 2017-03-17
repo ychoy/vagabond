@@ -15,10 +15,16 @@
 
 
   <div class="col-md-8">
-   <h3><%= @tip.title.titleize %></h3>
-   <%= link_to @city.name.titleize, city_path(@city) %>
-   <p><%= @tip.body %></p>
-   <br>
+    <h3><%= @tip.title.titleize %></h3>
+    <%= link_to @city.name.titleize, city_path(@city) %>
+    <p><%= @tip.body %></p>
+    <br>
+    <h4>Comments</h4>
+    <%= render @tip.comments %>
+
+    <h4>Add a comment:</h4>
+    <%= render 'comments/form' %>
+    <br>
    <%= button_to "Edit", edit_tip_path(@tip), :method => "get", class: "btn btn-primary tip-button" %>
    <br>
    <%= button_to "Delete #{tip_rename}", tip_path(@tip), :method => 'delete', :data => {:confirm => "Are you sure you want to delete #{@tip.title}?"},  class: "btn btn-danger tip-button" %>
@@ -26,5 +32,3 @@
 
 </div>
 </div>
-
-
