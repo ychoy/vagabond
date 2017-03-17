@@ -1,12 +1,11 @@
 <div class="jumbotron">
-
-    <%= image_tag("lvg_by_yanyinchoy.png", width: "100%", class:"img-fluid", alt:"homepage photo") %>
-
+  <%= image_tag("lvg_by_yanyinchoy.png", width: "100%", class:"img-fluid", alt:"homepage photo") %>
 </div>
 
-
+<div class="container">
+  <h1 class="text-center homepage-tagline">Discover Hints About Your Favorite Cities</h1>
+</div>
 <br>
-
 
 <% @cities.each do |city| %>
   <div class="card-group">
@@ -18,9 +17,9 @@
         </div>
 
         <div class="card-img-overlay">
-          <h2 class="card-title text-center city_caption_a">
+          <h3 class="card-title text-center city_caption_a">
             <%= link_to city.name.titleize, city_path(city) %>
-          </h2>
+          </h3>
         </div>
       </div>
     </div>

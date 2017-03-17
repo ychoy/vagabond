@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   post "/sessions", to: "sessions#create"
 
+
   ## TIPS ##
 
   get "/tips", to: "tips#index", as: "tips"
@@ -38,6 +39,15 @@ Rails.application.routes.draw do
   patch "/tips/:id", to: "tips#update", as: "update_tip"
 
   delete "/tips/:id", to: "tips#destroy"
+
+  ## COMMENTS ##
+
+  # comments as a nested resource within tips
+  resources :tips do
+    resources :comments
+  end
+
+
 
   ## CITIES ##
 
