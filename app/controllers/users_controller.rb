@@ -19,8 +19,11 @@ class UsersController < ApplicationController
 
   def create
     if valid_user_params?
+
       @user = User.create(user_params)
+      assign_privileges
       Rails.logger.info(@user.errors.inspect)
+
       login(@user)
       redirect_to user_path(@user)
     else
@@ -64,6 +67,14 @@ class UsersController < ApplicationController
 
   def valid_user_params?
     User.new(user_params).valid?
+  end
+
+  def assign_privileges
+    if user_params[:email].include?("levagabond")
+      @user[:privilege_level] = 1
+    else
+      @user[:privilege_level] = 0
+    end
   end
 
 end
