@@ -1,9 +1,10 @@
 <%= form_for([@tip, @tip.comments.build]) do |f| %>
   <div class="form-group">
+
     <p><strong>Add Comment:</strong></p>
     <%= f.text_area :content, placeholder: "Share your comments on this hint", height: "50vh", width: "10vw", required: true %>
   </div>
   <div class="actions", class: "btn btn-default" >
-    <%= f.submit "Submit"%>
+    <%= f.submit class: "btn tip-button"%>
   </div>
 <% end %>
