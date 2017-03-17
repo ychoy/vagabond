@@ -1,0 +1,12 @@
+<% @tip.comments.each do |comment| %>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.content %>
+  </p>
+
+  <p>
+    <%= link_to 'Destroy Comment', [comment.tip, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
