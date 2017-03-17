@@ -5,10 +5,17 @@ module UsersHelper
   end
 
   def assign_privilege
-    if user_params[:email].include?("levagabond")
-      user_params[:admin] = true
+    if user_params[:email].include?("@levagabond.com")
+      @user = User.create(user_params)
+      @user.toggle!(:admin)
+      Rails.logger.info(@user.errors.inspect)
+      login(@user)
+      redirect_to user_path(@user)
     else
-      user_params
+      @user = User.create(user_params)
+      Rails.logger.info(@user.errors.inspect)
+      login(@user)
+      redirect_to user_path(@user)
     end
   end
 
