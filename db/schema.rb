@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20170317074415) do
     t.string   "current_city"
     t.string   "password_digest"
     t.string   "profile_image"
-    t.integer  "privilege_level"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.boolean  "admin",           default: false
