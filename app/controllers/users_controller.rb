@@ -19,15 +19,14 @@ class UsersController < ApplicationController
 
   def create
     if valid_user_params?
-
-      @user = User.create(user_params)
       assign_privileges
-      Rails.logger.info(@user.errors.inspect)
+      @user = User.create(user_params)
 
+      Rails.logger.info(@user.errors.inspect)
       login(@user)
       redirect_to user_path(@user)
     else
-      flash[:error] = "Oh no, enter better stuff!"
+      flash[:error] = @user.errors.full_messages.join(", ")
       redirect_to new_user_path
     end
   end
@@ -57,7 +56,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :current_city, :password, :profile_image)
+    params.require(:user).permit(:first_name, :last_name, :email, :current_city, :password, :profile_image, :privilege_level)
   end
 
   def set_user
@@ -69,12 +68,6 @@ class UsersController < ApplicationController
     User.new(user_params).valid?
   end
 
-  def assign_privileges
-    if user_params[:email].include?("levagabond")
-      @user[:privilege_level] = 1
-    else
-      @user[:privilege_level] = 0
-    end
-  end
+
 
 end
