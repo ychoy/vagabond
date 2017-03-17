@@ -18,17 +18,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    if valid_user_params? && user_params[:email].include?("@levagabond.com")
-      @user = User.create(user_params)
-      @user.toggle!(:admin)
-      Rails.logger.info(@user.errors.inspect)
-      login(@user)
-      redirect_to user_path(@user)
-    elsif
-      @user = User.create(user_params)
-      Rails.logger.info(@user.errors.inspect)
-      login(@user)
-      redirect_to user_path(@user)
+    if valid_user_params?
+      assign_privilege
     else
       flash[:error] = @user.errors.full_messages.join(", ")
       redirect_to new_user_path

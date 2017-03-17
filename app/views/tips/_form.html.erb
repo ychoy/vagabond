@@ -1,10 +1,8 @@
 <div class="container">
   <%= form_for @tip do |f| %>
-  <div class="form-group">
-    <h6>All fields are required</h6>
     <div class="form-group">
       <%= f.label :city %>
-      <%= f.collection_select :city_id, City.order(:name),:id,:name, include_blank: true, selected: @selected_city%>
+      <%= f.collection_select :city_id, City.order(:name),:id,:name, include_blank: false, selected: @selected_city %>
     </div>
     <div class="form-group">
     <%= f.label :title %>
@@ -13,10 +11,8 @@
     <div class="form-group">
     <%= f.label :body %>
     <%= f.text_field :body, placeholder: "Content", class: "form-control", autofocus: true, :required => true %>
-    </div>
     <div class="actions">
     <%= f.submit "Save Post", class: "btn btn-block btn-primary" %>
     </div>
-  </div>
   <% end %>
 </div>
