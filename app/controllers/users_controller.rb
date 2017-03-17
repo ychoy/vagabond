@@ -18,13 +18,19 @@ class UsersController < ApplicationController
   end
 
   def create
-    if valid_user_params?
+    if valid_user_params? && user_params[:email].include?("@levagabond.com")
+      @user = User.create(user_params)
+      @user.toggle!(:admin)
+      Rails.logger.info(@user.errors.inspect)
+      login(@user)
+      redirect_to user_path(@user)
+    elsif
       @user = User.create(user_params)
       Rails.logger.info(@user.errors.inspect)
       login(@user)
       redirect_to user_path(@user)
     else
-      flash[:error] = "Oh no, enter better stuff!"
+      flash[:error] = @user.errors.full_messages.join(", ")
       redirect_to new_user_path
     end
   end
@@ -43,12 +49,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-
     @user = User.find(params[:id])
     @user.destroy
     flash[:success] = "Successfully removed account and hints."
     redirect_to root_path
-
   end
 
   private
@@ -65,5 +69,7 @@ class UsersController < ApplicationController
   def valid_user_params?
     User.new(user_params).valid?
   end
+
+
 
 end

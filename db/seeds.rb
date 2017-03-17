@@ -14,7 +14,8 @@ User.create({
   current_city: 'Havana',
   profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
   email: 'nicolas@me.com',
-  password: 'nicolas'
+  password: 'nicolas',
+  admin: false
 })
 
 User.create({
@@ -23,7 +24,8 @@ User.create({
   current_city: 'Honolulu',
   profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
   email: 'Rayne@me.com',
-  password: 'Rayne'
+  password: 'Rayne',
+  admin: false
 })
 
 
@@ -33,7 +35,8 @@ User.create({
   current_city: 'Ibiza',
   profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
   email: 'faustino@me.com',
-  password: 'faustino'
+  password: 'faustino',
+  admin: false
 })
 
 User.create({
@@ -41,8 +44,9 @@ User.create({
   last_name: 'Attwater',
   current_city: 'Gibraltar',
   profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
-  email: 'mariabella@me.com',
-  password: 'mariabella'
+  email: 'mariabella@levagabond.com',
+  password: 'mariabella',
+  admin: true
 })
 
 User.create({
@@ -51,7 +55,8 @@ User.create({
   current_city: 'London',
   profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
   email:'fatima@me.com',
-  password:' fatima'
+  password:' fatima',
+  admin: false
 })
 
 User.create({
@@ -60,7 +65,8 @@ User.create({
   current_city: 'San Francisco',
   profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
   email: 'darwin@me.com',
-  password:' password'
+  password:' password',
+  admin: false
 })
 
 User.create({
@@ -68,8 +74,9 @@ User.create({
   last_name: 'Yen',
   current_city: 'Hong Kong',
   profile_image: 'https://s-media-cache-ak0.pinimg.com/236x/81/a0/a9/81a0a9479b8f60fdb4b364726f2be75a.jpg',
-  email: 'marisol@me.com',
-  password: 'marisol'
+  email: 'marisol@levagabond.com',
+  password: 'marisol',
+  admin: true
 })
 
 City.create({
