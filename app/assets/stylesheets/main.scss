@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+.edit-btn:before   { content: "\270E"; }
+.delete-btn:before { content: "\2718";}
+.tip-button.delete-btn {
+  top:40px;
+}
+
 .object-fit_contain { object-fit: contain }
 
 .profile-bold {
@@ -90,8 +96,33 @@ a {
   text-decoration: none;
 }
 
-.tip-button {
+
+.side-btn{
   display: inline-block;
+  position: absolute;
+  width: 30px;
+  padding:5px 10px;
+  top:0;
+  right: 0;
+}
+.btn-offset{
+  top: 30px;
+}
+.featured{
+  width:100%;
+}
+.full-width{
+  padding:0;
+}
+.tip-button {
+  color:white;
+  border-color: rgba(118,182,196,.8);
+  background-color: #76B6C4;
+}
+.tip-button:hover, .tip-button:focus, .tip-button:active, .tip-button:active:focus{
+  color:white;
+  border-color: rgba(118,182,196,.6);
+  background-color: rgba(118,182,196,.8);
 }
 
 .tip-show-profile {
@@ -112,7 +143,6 @@ a {
 
 .btn-primary, .btn {
   margin: 10px 0px;
-  width:100%;
 }
 .card-group .col-md-4, .city-img {
   padding: 0px;
