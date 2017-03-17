@@ -2,15 +2,15 @@
   <div class="form-group">
  		<div class="form-group">
     	<%= f.label :first_name %>
-      <%= f.text_field :first_name, placeholder: "First Name", class: "form-control", autofocus: true %>
+      <%= f.text_field :first_name, placeholder: "First Name", class: "form-control", autofocus: true, :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :last_name %>
-      <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control", autofocus: true %>
+      <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control", autofocus: true, :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :current_city %>
-      <%= f.text_field :current_city, placeholder: "Current City", class: "form-control", autofocus: true %>
+      <%= f.text_field :current_city, placeholder: "Current City", class: "form-control", autofocus: true, :required => true %>
     </div>
     <div class="form-group">
       <%= f.label :profile_image %>
@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
     	<%= f.label :email %>
-      <%= f.email_field :email, placeholder: "Email", autofocus: true, class: "form-control" %>
+      <%= f.email_field :email, placeholder: "Email", autofocus: true, class: "form-control", :required => true%>
     </div>
     <div class="form-group" >
       <%= f.label :password %>
