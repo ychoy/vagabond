@@ -7,27 +7,27 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="card group">
-        <div class="col-md-4">
-          <div class="card-block">
-            <% @city.tips.order(created_at: :desc).each do |tip|%>
-              <strong><%= link_to tip.title.titleize, tip_path(tip) %></strong>
-              by <%= link_to "#{tip.user.first_name} #{tip.user.last_name}", user_path(tip.user) %>
-              <br>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <br> 
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3 col-md-3">
+      <div class="col-sm-12 col-md-6 col-md-offset-3">
        <!-- why does this link look like a button? BECAUSE: https://github.com/rails/rails/issues/2158 -->
         <%= link_to "Add New #{tip_rename}", new_tip_path(:city => @city.id), :method => "get", :class => "btn btn-primary" %>
       </div>
     </div>
   </div>
 </div>
+  <div class="container">
+    <div class="row">
+      <div class="card group">
+        <div class="card-block">
+          <% @city.tips.order(created_at: :desc).each do |tip|%>
+            <div class="col-md-12 tip-container">
+              <strong><%= link_to tip.title.titleize, tip_path(tip) %></strong>
+              by <%= link_to "#{tip.user.first_name} #{tip.user.last_name}", user_path(tip.user) %>
+            </div>
+            <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
