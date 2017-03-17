@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    if valid_user_params? && user_params[:email].include?("levagabond")
+    if valid_user_params? && user_params[:email].include?("@levagabond.com")
       @user = User.create(user_params)
       @user.toggle!(:admin)
       Rails.logger.info(@user.errors.inspect)
