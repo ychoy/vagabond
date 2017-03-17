@@ -33,6 +33,16 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'paperclip', '~> 5.1.0'
+
+gem 'ckeditor', '~> 4.2.2'
+
+gem 'orm_adapter', '~> 0.5.0'
+
+gem 'bootstrap-will_paginate', '~> 0.0.11'
+
+gem 'will_paginate', '~> 3.1.5'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

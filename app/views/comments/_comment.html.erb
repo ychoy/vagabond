@@ -1,13 +1,10 @@
-
 <% @tip.comments.each do |comment| %>
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.content %>
-  </p>
+  <strong>Comment:</strong>
+  <p><%= comment.content %></p>
+  <h6>Posted by: <%= comment.user.first_name%> <%= comment.user.last_name %></h6>
 
-  <p>
-    <%= link_to 'Destroy Comment', [comment.tip, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-  </p>
+  <% if current_user == comment.user%>
+    <%= link_to "Remove", [comment.tip, comment], method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+  <hr>
 <% end %>

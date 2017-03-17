@@ -17,15 +17,18 @@
   <div class="col-md-8">
     <h3><%= @tip.title.titleize %></h3>
     <%= link_to @city.name.titleize, city_path(@city) %>
-    <h6><%= @tip.created_at.strftime('%b %d, %Y') %></h6>
+    <h6>Posted on: <%= @tip.created_at.strftime('%b %d, %Y') %></h6>
     <br>
     <p><%= @tip.body %></p>
     <br>
-    <h4>Comments</h4>
-    <%= render @tip.comments %>
 
-    <h4>Add a comment:</h4>
-    <%= render 'comments/form' %>
+    <%if @tip.comments.any?  %>
+      <h4>Comments: </h4>
+      <%= render @tip.comments %>
+    <% end %>
+
+    <hr>
+    <%= render 'comments/form' , class: "btn btn-default" %>
     <br>
     <br>
     <% if session[:admin] %>
