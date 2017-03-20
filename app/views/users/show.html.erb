@@ -30,29 +30,34 @@
     </div>
   </div>
   <div class="col-md-8">
-    <%= button_to "+", new_tip_path(@tip), :method => "get", class: "btn tip-button side-btn btn-offset" %>
-    <br>
+
     <% if is_admin? && (current_user == @user) %>
       <h3> <%= @user.first_name%>'s Hints</h3>
       <hr>
       <p>You haven't added any hints!</p>
-    <% end %>
-
-    <% @user.tips.each do |tip| %>
-      <h4><%= link_to tip.title.titleize, tip_path(tip) %></h4>
-      <h6> <%= tip.city.name %></h6>
-      <h6> Posted on: <%= tip.created_at.strftime('%b %d, %Y') %></h6>
+    <% elsif is_admin? && current_user == @user %>
+      <%= button_to "+", new_tip_path(@tip), :method => "get", class: "btn tip-button side-btn btn-offset" %>
       <br>
+      <% @user.tips.each do |tip| %>
+        <h4><%= link_to tip.title.titleize, tip_path(tip) %></h4>
+        <h6> <%= tip.city.name %></h6>
+        <h6> Posted on: <%= tip.created_at.strftime('%b %d, %Y') %></h6>
+        <br>
 
-      <p><%= "#{tip.body.truncate(256)}" %></p>
+        <p><%= "#{tip.body.truncate(256)}" %></p>
 
-      <% if tip.body.length > 256 %>
-        <div class="text-right">
-          <%= link_to "Read More", tip_path(tip) %>
-        </div>
+        <% if tip.body.length > 256 %>
+          <div class="text-right">
+            <%= link_to "Read More", tip_path(tip) %>
+          </div>
+        <% end %>
+
+        <hr>
       <% end %>
-
-      <hr>
+    <% elsif !is_admin? %>
+      <% @user.comments.each do |comment| %>
+      <% end %> 
     <% end %>
+
   </div>
 </div>
