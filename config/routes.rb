@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "/", to: "cities#index", as: "root"
 
-  resources :users, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :users
 
   ## SESSIONS ##
   get "/login", to: "sessions#new"
@@ -15,12 +15,12 @@ Rails.application.routes.draw do
 
 
   ## TIPS ##
-  resources :tips, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :tips
 
   ## COMMENTS ##
 
   #comments as a nested resource within tips
-  resources :tips
+  resources :tips do
     resources :comments, shallow: true
   end
 
