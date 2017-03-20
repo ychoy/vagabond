@@ -55,8 +55,12 @@
         <hr>
       <% end %>
     <% elsif !is_admin? %>
-      <% @user.comments.each do |comment| %>
-      <% end %> 
+      <br>
+      <br>
+      <br>
+      <p>
+      Check out hints on your favorite cities and <strong><%= link_to "share your comments", cities_path %></strong>!
+      </p>
     <% end %>
 
   </div>
