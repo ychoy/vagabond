@@ -13,22 +13,14 @@ Rails.application.routes.draw do
 
   post "/sessions", to: "sessions#create"
 
-
-  ## TIPS ##
-  resources :tips
-
-  ## COMMENTS ##
-
-  #comments as a nested resource within tips
+  ## TIPS & COMMENTS ##
   resources :tips do
     resources :comments, shallow: true
   end
 
-  #same as --> resources :comments, except: [:index, :create, :new, :update, :destroy]
-
   ## CITIES ##
 
-  resources :cities, only: [:index, :new, :create, :show, :edit, :update ]
+  resources :cities, only: [:index, :show ]
 
   ## 404 ##
 

@@ -1,29 +1,13 @@
 class CitiesController < ApplicationController
 
   before_action :set_city, only: [:show]
-  before_action :require_login, only: [:new, :create, :edit, :update]
 
   def index
     @cities = City.all
   end
 
   def show
-    
-  end
 
-  def new
-    @city = City.new
-  end
-
-  def create
-    @city = City.create(city_params)
-    redirect_to @city
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   private
