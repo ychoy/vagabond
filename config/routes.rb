@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-  ## will probably need to change this route going forward
-
   get "/", to: "cities#index", as: "root"
-
-  resources :users
 
   ## SESSIONS ##
   get "/login", to: "sessions#new"
@@ -12,6 +8,10 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
 
   post "/sessions", to: "sessions#create"
+
+  ## USERS ##
+
+  resources :users
 
   ## TIPS & COMMENTS ##
   resources :tips do
