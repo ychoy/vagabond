@@ -4,17 +4,7 @@ Rails.application.routes.draw do
 
   get "/", to: "cities#index", as: "root"
 
-  get "/users/new", to: "users#new", as: "new_user"
-
-  get "/users/:id", to: "users#show", as: "user"
-
-  post "/users", to: "users#create"
-
-  get "/users/:id/edit", to: "users#edit", as: "edit_user"
-
-  patch "/users/:id", to: "users#update", as: "update_user"
-
-  delete "/users/:id", to: "users#destroy"
+  resources :users, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   ## SESSIONS ##
   get "/login", to: "sessions#new"
@@ -25,41 +15,20 @@ Rails.application.routes.draw do
 
 
   ## TIPS ##
-
-  get "/tips", to: "tips#index", as: "tips"
-
-  get "/tips/new", to: "tips#new", as: "new_tip"
-
-  get "/tips/:id", to: "tips#show", as: "tip"
-
-  post "/tips", to: "tips#create"
-
-  get "/tips/:id/edit", to: "tips#edit", as: "edit_tip"
-
-  patch "/tips/:id", to: "tips#update", as: "update_tip"
-
-  delete "/tips/:id", to: "tips#destroy"
+  resources :tips, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   ## COMMENTS ##
 
   #comments as a nested resource within tips
-  resources :tips do
-    resources :comments
+  resources :tips
+    resources :comments, shallow: true
   end
+
+  #same as --> resources :comments, except: [:index, :create, :new, :update, :destroy]
 
   ## CITIES ##
 
-  get "/cities", to: "cities#index", as: "cities"
-
-  get "/cities/new", to: "cities#new", as: "new_city"
-
-  get  "/cities/:id", to: "cities#show", as: "city"
-
-  post "/cities", to: "cities#create"
-
-  get "/cities/:id/edit", to: "cities#edit", as:"edit_city"
-
-  patch "/cities/:id", to: "cities#update", as: "update_city"
+  resources :cities, only: [:index, :new, :create, :show, :edit, :update ]
 
   ## 404 ##
 
