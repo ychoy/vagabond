@@ -4,6 +4,7 @@ class TipsController < ApplicationController
   before_action :set_city_for_tip,  only: [:new, :edit]
   before_action :set_owner,         only: [:edit, :update, :destroy]
   before_action :authorize_owner,   only: [:edit, :update, :destroy]
+  before_action :is_admin?,          only: [:create]
 
   def index
     @tips = Tip.all
@@ -19,14 +20,14 @@ class TipsController < ApplicationController
   end
 
   def create
-    if valid_city? && valid_tip_params?
+    if valid_city? && valid_tip_params? && is_admin?
       @tip = current_user.tips.create(tip_params)
       @city=City.find(tip_params[:city_id])
       @city.tips << @tip
       flash[:notice] = tip_rename + " successfully created"
       redirect_to @tip
     else
-      flash[:error] = tip_rename + " could not be created"
+      flash[:error] = @tip.errors.full_messages.join(", ")
       redirect_to new_tip_path
     end
   end

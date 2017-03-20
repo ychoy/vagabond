@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if valid_user_params?
       assign_privilege
     else
-      flash[:error] = @user.errors.full_messages.join(", ")
+      flash[:error] = "Error creating new account" #"@user.errors.full_messages.join(", ")"
       redirect_to new_user_path
     end
   end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
         flash[:notice] = "Successfully updated profile."
         redirect_to user_path(@user)
     else
-      flash[:error] = @user.errors.full_messages.join(", ")
+      flash[:error] = "Error saving updates."
       redirect_to edit_user_path(@user)
     end
   end

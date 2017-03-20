@@ -28,4 +28,10 @@ module SessionsHelper
     redirect_to root_path unless current_user == @owner
   end
 
+  def is_admin?
+    if logged_in?
+      current_user[:admin]
+    end
+  end
+
 end
