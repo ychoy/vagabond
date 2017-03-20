@@ -1,9 +1,9 @@
 class TipsController < ApplicationController
-  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_tip, only: [:show, :edit, :update, :destroy]
-  before_action :set_city_for_tip, only: [:new, :edit]
-  before_action :set_owner, only: [:edit, :update, :destroy]
-  before_action :authorize_owner, only: [:edit, :update, :destroy]
+  before_action :require_login,     only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_tip,           only: [:show, :edit, :update, :destroy]
+  before_action :set_city_for_tip,  only: [:new, :edit]
+  before_action :set_owner,         only: [:edit, :update, :destroy]
+  before_action :authorize_owner,   only: [:edit, :update, :destroy]
 
   def index
     @tips = Tip.all
