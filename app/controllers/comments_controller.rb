@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_tip, only: [:create, :destroy]
+  before_action :set_tip,       only: [:create, :destroy]
   before_action :require_login, only: [:new, :create, :destroy]
 
   def new
