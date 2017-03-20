@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   ## CITIES ##
 
-  resources :cities, only: [:index, :show ]
+  resources :cities,  only: [:index, :show ] do
+    resources :tips, only: [:new, :create]
+  end
 
   ## 404 ##
 
