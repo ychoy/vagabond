@@ -26,7 +26,16 @@
 
     <%if @tip.comments.any?  %>
       <h4>Comments: </h4>
-      <%= render @tip.comments %>
+      <% @tip.comments.each do |comment| %>
+        <strong>Comment:</strong>
+        <p><%= comment.content %></p>
+        <h6>Posted by: <%= comment.user.first_name%> <%= comment.user.last_name %></h6>
+
+        <% if current_user == comment.user%>
+          <%= link_to "Remove", @comment, method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+        <hr>
+      <% end %>
     <% end %>
 
     <hr>
